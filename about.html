@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ManSH Apparel LLP</title>
+    <meta name="description" content="Learn about ManSH Apparel's journey, values, and commitment to excellence in custom clothing manufacturing." />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-hero {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5rem;
+        }
+        .page-hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+        }
+        .page-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .story-section {
+            padding: 4rem 0;
+            background: var(--beige);
+        }
+        .story-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .story-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: rgba(91, 59, 43, 0.8);
+        }
+        .why-section {
+            padding: 4rem 0;
+            background: var(--beige-dark);
+        }
+        .why-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .why-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .why-card h3 {
+            font-size: 1.5rem;
+            color: var(--brown);
+            margin-bottom: 1rem;
+        }
+        .why-card p {
+            color: rgba(91, 59, 43, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <a href="index-standalone.html" class="logo">
+                    <img src="images/logo.png" alt="ManSH Apparel Logo" style="height: 80px;">
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="index-standalone.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="contact.html" class="btn-primary">Get in Touch</a>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index-standalone.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="btn-primary">Get in Touch</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <img src="images/about-hero.jpg" alt="Our Factory">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>About ManSH Apparel</h1>
+            <p style="font-size: 1.5rem;">One-Stop "Fabric to Fashion" Solutions</p>
+        </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story-section">
+        <div class="container">
+            <h2>About ManSH Apparel</h2>
+            <div class="story-content">
+                <p><strong>Welcome to ManSH Apparel</strong>, a modern-age textile company redefining custom and event-based garment manufacturing. With years of experience, we've built a reputation for delivering creative, high-quality, and timely textile solutions — from premium fabrics to custom-designed garments and accessories.</p>
+                <p>Our fully integrated facility gives us complete control over every stage of production — from fabric creation and dyeing to cutting, stitching, and finishing. This vertical setup ensures consistent quality, faster turnaround times, and the flexibility to meet custom requirements for bulk and event-based orders.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <div class="founder-item">
+                <div class="founder-image">
+                    <img src="images/founder-1.jpg" alt="Founder">
+                </div>
+                <div class="founder-content">
+                    <h3>Founder - Mr. [Name]</h3>
+                    <p>Visionary leader with 17+ years of textile industry experience. Founded ManSH Apparel with a commitment to delivering creative, high-quality garmenting solutions. His expertise in fabric technology and production management has driven the company's growth from a small workshop to an integrated manufacturing facility.</p>
+                </div>
+            </div>
+            <div class="founder-item reverse">
+                <div class="founder-image">
+                    <img src="images/director-1.jpg" alt="Director">
+                </div>
+                <div class="founder-content">
+                    <h3>Director - Mr. [Name]</h3>
+                    <p>Strategic director overseeing operations and client relations. With deep understanding of market dynamics and customer needs, he ensures every project meets exacting standards. His leadership in quality control and timely delivery has established ManSH Apparel as a trusted partner for custom textile solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To be a one-stop "Fabric to Fashion" destination, providing end-to-end textile and garmenting solutions that bring our clients' creative visions to life — with precision, innovation, and reliability at every step.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To lead the textile industry with responsible and sustainable manufacturing, delivering high-quality, custom-crafted products that reflect creativity, efficiency, and care for our stakeholders and the environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-section">
+        <div class="container">
+            <h2>Why Choose ManSH Apparel</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Expert Team</h3>
+                    <p>At the heart of ManSH Apparel lies a dedicated team of skilled designers, craftsmen, and production experts who blend innovation with experience. Guided by strong leadership and a shared passion for excellence.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Quality Assurance</h3>
+                    <p>Quality isn't just a step in our process — it's our foundation. Every fabric and finished garment undergoes rigorous quality checks to ensure perfect stitching, color fastness, durability, and design accuracy.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Timely Delivery</h3>
+                    <p>We understand that in the apparel world, timing is everything. Our transparent communication and streamlined workflow ensure on-time completion of every order without compromising on quality.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Integrated Facility</h3>
+                    <p>Our fully integrated setup gives us complete control over production — from fabric creation and dyeing to finishing. This ensures consistent quality, faster turnaround, and flexibility for custom requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo.png" alt="ManSH Apparel Logo" class="footer-logo">
+                    <p>Premium custom clothing and apparel manufacturing. Creating fashion excellence with passion, precision, and production.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index-standalone.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Get in Touch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>123 Fashion Street, Textile District, Mumbai 400001</span></li>
+                        <li><i class="fas fa-phone"></i> <span>+91 98765 43210</span></li>
+                        <li><i class="fas fa-envelope"></i> <span>info@manshapparel.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ManSH Apparel LLP. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">^</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

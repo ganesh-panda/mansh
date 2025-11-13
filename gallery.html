@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - ManSH Apparel LLP</title>
+    <meta name="description" content="Explore our diverse collection of custom apparel and accessories. View our portfolio of tailored suits, handbags, casual wear, and more." />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-page {
+            padding: 8rem 0 4rem;
+            background: var(--beige);
+        }
+        .gallery-page h1 {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .gallery-page > p {
+            text-align: center;
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: rgba(91, 59, 43, 0.8);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        .gallery-item:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-category {
+            color: var(--accent);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .gallery-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <a href="index-standalone.html" class="logo">
+                    <img src="images/logo.png" alt="ManSH Apparel Logo" style="height: 80px;">
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="index-standalone.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                    <a href="contact.html" class="btn-primary">Get in Touch</a>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index-standalone.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="contact.html" class="btn-primary">Get in Touch</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Gallery -->
+    <section class="gallery-page">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Explore our diverse collection of custom apparel and accessories</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery-yellow-polo.jpg" alt="Custom Polo Shirts">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Uniforms</span>
+                        <h3 class="gallery-title">Custom Polo Shirts</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-volunteer-shirt.jpg" alt="Volunteer Uniforms">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Event Wear</span>
+                        <h3 class="gallery-title">Volunteer Uniforms</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-volunteer-tee.jpg" alt="Event T-Shirts">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Casual Wear</span>
+                        <h3 class="gallery-title">Event T-Shirts</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-traffic-warden.jpg" alt="Safety Workwear">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Safety Wear</span>
+                        <h3 class="gallery-title">Traffic Warden Uniforms</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-blue-polo.jpg" alt="Corporate Uniforms">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Corporate</span>
+                        <h3 class="gallery-title">Corporate Uniforms</h3>
+                    </div>
+                </div>
+                <!-- <div class="gallery-item">
+                    <img src="images/gallery-red-vest.jpg" alt="Safety Vests">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Safety Wear</span>
+                        <h3 class="gallery-title">High-Visibility Vests</h3>
+                    </div>
+                </div> -->
+                <!-- <div class="gallery-item">
+                    <img src="images/gallery-green-jacket.jpg" alt="Industrial Workwear">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Workwear</span>
+                        <h3 class="gallery-title">Industrial Jackets</h3>
+                    </div>
+                </div> -->
+                <!-- <div class="gallery-item">
+                    <img src="images/gallery-orange-polo.jpg" alt="Safety Polo">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Safety Wear</span>
+                        <h3 class="gallery-title">Safety Polo Shirts</h3>
+                    </div>
+                </div> -->
+                <!-- <div class="gallery-item">
+                    <img src="images/gallery-navy-hoodie.jpg" alt="Custom Hoodies">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Casual Wear</span>
+                        <h3 class="gallery-title">Branded Hoodies</h3>
+                    </div>
+                </div> -->
+                <div class="gallery-item">
+                    <img src="images/gallery-maroon-tee.jpg" alt="Branded Tees">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Casual Wear</span>
+                        <h3 class="gallery-title">Custom Branded Tees</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/product-purple-tshirt.jpg" alt="Premium Polo">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Corporate</span>
+                        <h3 class="gallery-title">Premium Polo Shirts</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/product-chair-cover.jpg" alt="Chair Covers">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Event Accessories</span>
+                        <h3 class="gallery-title">Custom Chair Covers</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/product-custom-bag.jpg" alt="Custom Bags">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Accessories</span>
+                        <h3 class="gallery-title">Branded Tote Bags</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo.png" alt="ManSH Apparel Logo" class="footer-logo">
+                    <p>Premium custom clothing and apparel manufacturing. Creating fashion excellence with passion, precision, and production.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index-standalone.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Get in Touch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>123 Fashion Street, Textile District, Mumbai 400001</span></li>
+                        <li><i class="fas fa-phone"></i> <span>+91 98765 43210</span></li>
+                        <li><i class="fas fa-envelope"></i> <span>info@manshapparel.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ManSH Apparel LLP. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">^</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
