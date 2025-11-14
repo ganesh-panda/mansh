@@ -150,6 +150,32 @@ scrollToTopBtn.addEventListener("click", () => {
   });
 });
 
+// Process Section Carousel
+const processSlides = document.querySelectorAll('.process-slide');
+const processPrevBtn = document.querySelector('.process-nav.prev');
+const processNextBtn = document.querySelector('.process-nav.next');
+let currentProcessSlide = 0;
+
+function showProcessSlide(index) {
+    processSlides.forEach(slide => slide.classList.remove('active'));
+    processSlides[index].classList.add('active');
+}
+
+function nextProcessSlide() {
+    currentProcessSlide = (currentProcessSlide + 1) % processSlides.length;
+    showProcessSlide(currentProcessSlide);
+}
+
+function prevProcessSlide() {
+    currentProcessSlide = (currentProcessSlide - 1 + processSlides.length) % processSlides.length;
+    showProcessSlide(currentProcessSlide);
+}
+
+if (processPrevBtn && processNextBtn) {
+    processPrevBtn.addEventListener('click', prevProcessSlide);
+    processNextBtn.addEventListener('click', nextProcessSlide);
+}
+
 // Contact Form Handler (for contact page)
 // const contactForm = document.getElementById('contactForm');
 // if (contactForm) {

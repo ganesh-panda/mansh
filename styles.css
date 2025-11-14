@@ -228,18 +228,18 @@ body {
 }
 
 .slide-text h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-.slide-text p {
+/* .slide-text p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.95;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-}
+} */
 
 .carousel-nav {
     position: absolute;
@@ -340,7 +340,7 @@ body {
     align-items: center;
 }
 
-.process-images {
+/* .process-images {
     position: relative;
     height: 500px;
 }
@@ -372,7 +372,79 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+} */
+
+.process-images-carousel {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
+.process-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.process-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.process-slide.active {
+    opacity: 1;
+}
+
+.process-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.process-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.process-nav:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.process-nav.prev {
+    left: 15px;
+}
+
+.process-nav.next {
+    right: 15px;
+}
+
+.process-nav i {
+    font-size: 1.2rem;
+    color: var(--brown-dark);
+}
+
 
 .process-content h2 {
     font-size: 2.5rem;
@@ -388,8 +460,39 @@ body {
     margin-bottom: 1rem;
 }
 
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.process-step {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+}
+
+.process-step h4 {
+    font-size: 1.125rem;
+    color: var(--brown-dark);
+    margin-bottom: 0.5rem;
+}
+
+.process-step p {
+    font-size: 1rem;
+    color: rgba(91, 59, 43, 0.8);
+    margin: 0;
+}
+
+/* .process-step i {
+    font-size: 1.5rem;
+    color: var(--brown);
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+} */
+
 /* Values Section */
-.values-section {
+/* .values-section {
     position: relative;
     padding: 6rem 0;
 }
@@ -412,9 +515,9 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
-}
+} */
 
-.values-section .container {
+/* .values-section .container {
     position: relative;
     z-index: 10;
 }
@@ -457,7 +560,7 @@ body {
 
 .value-card p {
     color: rgba(91, 59, 43, 0.8);
-}
+} */
 
 /* Product Gallery */
 .product-gallery {
@@ -535,7 +638,7 @@ body {
 }
 
 /* Testimonials */
-.testimonials {
+/* .testimonials {
     padding: 6rem 0;
     background: var(--beige);
 }
@@ -566,7 +669,7 @@ body {
 .testimonial-card:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     transform: translateY(-5px);
-}
+} */
 
 .company-header {
     display: flex;
@@ -597,11 +700,11 @@ body {
     color: var(--accent);
 }
 
-.testimonial-card p {
+/* .testimonial-card p {
     font-size: 0.938rem;
     line-height: 1.6;
     color: rgba(91, 59, 43, 0.8);
-}
+} */
 
 /* Footer */
 .footer {
@@ -700,40 +803,17 @@ body {
     opacity: 0.8;
 }
 
-/* Process Steps */
-.process-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.process-step {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-.process-step i {
-    font-size: 1.5rem;
-    color: var(--brown);
-    margin-top: 0.25rem;
-    flex-shrink: 0;
-}
-
-.process-step h4 {
-    font-size: 1.125rem;
-    color: var(--brown-dark);
-    margin-bottom: 0.5rem;
-}
-
-.process-step p {
-    font-size: 1rem;
-    color: rgba(91, 59, 43, 0.8);
-    margin: 0;
+.bullet {
+  margin-top: 8px;  
+  height: 15px;
+  width: 15px;
+  background-color: var(--brown);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 /* Founder Section */
-.founder-section {
+/* .founder-section {
     padding: 4rem 0;
     background: var(--beige-dark);
 }
@@ -783,7 +863,7 @@ body {
     font-size: 1.125rem;
     line-height: 1.8;
     color: rgba(91, 59, 43, 0.8);
-}
+} */
 
 /* Mission Section */
 .mission-section {
