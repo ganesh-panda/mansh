@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/fevicon-MS.png" type="image/ManSH-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - ManSH Apparel LLP</title>
     <meta name="description" content="Get in touch with ManSH Apparel for custom clothing inquiries. Contact us today for a free consultation." />
@@ -129,6 +130,70 @@
                 font-size: 2.5rem;
             }
         }
+        /* Popup modal styles */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+        .popup-overlay.active {
+            display: flex;
+        }
+        .popup {
+            background: var(--white);
+            color: var(--brown-dark);
+            border-radius: 0.75rem;
+            padding: 1.5rem 1.5rem 1.25rem 1.5rem;
+            max-width: 460px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            text-align: center;
+            transform-origin: center;
+        }
+        .popup.success .popup-icon {
+            /* background: rgba(46, 204, 113, 0.12); */
+            background: #efe3d7;
+            /* color: #27ae60; */
+            color: #7b4f3c;
+        }
+        .popup.error .popup-icon {
+            background: rgba(229, 62, 62, 0.12);
+            color: #e53e3e;
+        }
+        .popup .popup-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 0.75rem auto;
+        }
+        .popup h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.25rem;
+        }
+        .popup p { margin: 0 0 0.5rem 0; }
+        .popup .close-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: transparent;
+            border: none;
+            font-size: 1.25rem;
+            color: rgba(0,0,0,0.6);
+            cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
+        }
+        .popup .close-btn:focus { outline: 2px solid rgba(123,79,60,0.15); border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -281,7 +346,97 @@
 
     <!-- Scroll to Top Button -->
     <button id="scrollToTopBtn" title="Go to top">^</button>
+    <!-- Popup HTML (hidden by default) -->
+    <div id="formPopup" class="popup-overlay" aria-hidden="true">
+        <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+            <button class="close-btn" id="popupClose" aria-label="Close popup">&times;</button>
+            <div class="popup-icon" id="popupIcon">✓</div>
+            <h3 id="popupTitle">Success</h3>
+            <p id="popupMessage">Message sent successfully!</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
+    <script>
+        // Popup helper
+        const popupOverlay = document.getElementById('formPopup');
+        const popup = popupOverlay.querySelector('.popup');
+        const popupIcon = document.getElementById('popupIcon');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupMessage = document.getElementById('popupMessage');
+        const popupClose = document.getElementById('popupClose');
+
+        function showPopup(type, message) {
+            popup.classList.remove('success', 'error');
+            if (type === 'success') {
+                popup.classList.add('success');
+                popupIcon.textContent = '✓';
+                popupTitle.textContent = 'Success';
+            } else {
+                popup.classList.add('error');
+                popupIcon.textContent = '✕';
+                popupTitle.textContent = 'Error';
+            }
+            popupMessage.textContent = message;
+            popupOverlay.classList.add('active');
+            popupOverlay.setAttribute('aria-hidden', 'false');
+            // move focus to close button for accessibility
+            popupClose.focus();
+        }
+
+        function hidePopup(redirect = true) {
+            // hide overlay
+            popupOverlay.classList.remove('active');
+            popupOverlay.setAttribute('aria-hidden', 'true');
+            // small delay to allow any hide animation (if added) then redirect
+            if (redirect) {
+                setTimeout(function() {
+                    window.location.href = 'index.html';
+                }, 150);
+            }
+        }
+
+        // Close handlers
+        popupClose.addEventListener('click', hidePopup);
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) hidePopup();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+                hidePopup();
+            }
+        });
+
+        // Form submit
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxHVP5UfKQT_879bmA8HDWFF_9KYnsKLkyRXTnKBGBi7tAkc49Q3PuRz3jBxbUGPnsvaw/exec'; // google apps script web app URL
+
+            try {
+                // Using no-cors because Google Apps Script often requires it for webapps without CORS enabled.
+                await fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                showPopup('success', 'Message sent successfully!');
+                document.getElementById('contactForm').reset();
+
+            } catch (error) {
+                console.error(error);
+                showPopup('error', 'Error submitting form! Please try again later.');
+            }
+        });
+    </script>
 </body>
 </html>
