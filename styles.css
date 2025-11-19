@@ -8,7 +8,7 @@
     --muted: #7b7b7b;
     --white: #ffffff;
     --black: #000000;
-    
+
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -23,7 +23,8 @@ body {
     background-color: var(--beige);
     color: var(--brown-dark);
     line-height: 1.6;
-    behavior: smooth;   /*changes made here */
+    behavior: smooth;
+    /*changes made here */
 }
 
 .container {
@@ -144,6 +145,7 @@ body {
         opacity: 0;
         transform: translateX(100%);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -182,15 +184,19 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-repeat: no-repeat; /* changes made here */
+    background-repeat: no-repeat;
+    /* changes made here */
     opacity: 0.6;
     animation: zoomEffect 8s ease-in-out infinite;
 }
 
 @keyframes zoomEffect {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
@@ -213,7 +219,8 @@ body {
     color: var(--white);
     max-width: 800px;
     padding: 0 2rem;
-    line-height: 1.4;  /* changes made here */
+    line-height: 1.4;
+    /* changes made here */
 }
 
 .slide-text {
@@ -804,12 +811,12 @@ body {
 }
 
 .bullet {
-  margin-top: 8px;  
-  height: 15px;
-  width: 15px;
-  background-color: var(--brown);
-  border-radius: 50%;
-  display: inline-block;
+    margin-top: 8px;
+    height: 15px;
+    width: 15px;
+    background-color: var(--brown);
+    border-radius: 50%;
+    display: inline-block;
 }
 
 /* Founder Section */
@@ -926,12 +933,32 @@ body {
         width: 80%;
     }
 
-    .slide-text h1 {
-        font-size: 2rem;
+    .hero-carousel {
+        height: 60vh;
+        min-height: 500px;
     }
 
-    .slide-text p {
-        font-size: 1rem;
+    .carousel-content {
+        max-width: 90%;
+        padding: 0 1rem;
+    }
+
+    .slide-text h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    /* .slide-text p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    } */
+
+    .carousel-dots {
+        bottom: 1.5rem;
+    }
+
+    .carousel-nav {
+        width: 20%;
     }
 
     .intro-section h2 {
@@ -982,24 +1009,26 @@ body {
 
 /* Scroll to Top Button */
 #scrollToTopBtn {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 99;
-  font-size: 22px;
-  background-color: #a15d38cc; 
-  color: #fff;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 12px 18px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 99;
+    font-size: 22px;
+    background-color: #a15d38cc;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: none;
+    /* Hidden by default */
 }
 
 #scrollToTopBtn:hover {
-  background-color: #c3a6a0; /* Softer tone on hover */
-  transform: scale(1.1);
+    background-color: #c3a6a0;
+    /* Softer tone on hover */
+    transform: scale(1.1);
 }
