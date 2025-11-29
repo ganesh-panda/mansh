@@ -1,89 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/fevicon-MS.png" type="image/ManSH-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - ManSH Apparel LLP</title>
-    <meta name="description" content="Explore our diverse collection of custom apparel and accessories. View our portfolio of tailored suits, handbags, casual wear, and more." />
+    <title>Gallery - ManSh Apparel LLP</title>
+    <meta name="description"
+        content="Explore our diverse collection of custom apparel and accessories. View our portfolio of tailored suits, handbags, casual wear, and more." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manshapparel.in/gallery.html" />
+    <meta property="og:title" content="Product Gallery - ManSh Apparel LLP" />
+    <meta property="og:description"
+        content="Explore our gallery of custom manufactured apparel. From corporate uniforms to event merchandise, see our craftsmanship in action." />
+    <meta property="og:image" content="https://manshapparel.in/images/logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://manshapparel.in/gallery.html" />
+    <meta property="twitter:title" content="Product Gallery - ManSh Apparel LLP" />
+    <meta property="twitter:description"
+        content="Explore our gallery of custom manufactured apparel. From corporate uniforms to event merchandise, see our craftsmanship in action." />
+    <meta property="twitter:image" content="https://manshapparel.in/images/logo.png" />
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .gallery-page {
-            padding: 8rem 0 4rem;
-            background: var(--beige);
-        }
-        .gallery-page h1 {
-            font-size: 4rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        .gallery-page > p {
-            text-align: center;
-            font-size: 1.25rem;
-            margin-bottom: 3rem;
-            color: rgba(91, 59, 43, 0.8);
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-        .gallery-item:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 1.5rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        .gallery-category {
-            color: var(--accent);
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        .gallery-title {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-    </style>
+   
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
             <div class="nav-content">
                 <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="ManSH Apparel Logo" style="height: 80px;">
+                    <img src="images/logo.png" alt="ManSH Apparel Logo">
                 </a>
                 <div class="nav-links" id="navLinks">
                     <a href="index.html" class="nav-link">Home</a>
@@ -211,14 +162,17 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <img src="images/colored-logo.png" alt="ManSH Apparel Logo" class="footer-logo">
-                    <p>Premium custom clothing and apparel manufacturing. Creating fashion excellence with passion, precision, and production.</p>
-                    <div class="social-links">
+                    <a href="index.html" class="logo">
+                        <img src="images/colored-logo.png" alt="ManSH Apparel Logo" class="footer-logo">
+                    </a>
+                    <p>Premium custom clothing and apparel manufacturing. Creating fashion excellence with passion,
+                        precision, and production.</p>
+                    <!-- <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="footer-links">
                     <h3>Quick Links</h3>
@@ -232,14 +186,15 @@
                 <div class="footer-contact">
                     <h3>Contact Us</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> <span>123 Fashion Street, Textile District, Mumbai 400001</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>Thane, Mumbai</span></li>
+                        <li><i class="fas fa-phone"></i> <span>+91 9975641134</span></li>
                         <li><i class="fas fa-phone"></i> <span>+91 98765 43210</span></li>
-                        <li><i class="fas fa-envelope"></i> <span>info@manshapparel.com</span></li>
+                        <li><i class="fas fa-envelope"></i> <span>mansh@manshapparel.in</span></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 ManSH Apparel LLP. All rights reserved.</p>
+                <p>&copy; 2024 ManSh Apparel LLP. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -249,4 +204,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
