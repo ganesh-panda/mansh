@@ -24,19 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalSlides = slides.length;
 
     function showSlide(index) {
-        if (totalSlides === 0) return;
-
-        // Prevent out-of-range index
-        index = (index + totalSlides) % totalSlides;
+        if (!slides[index] || !slideTexts[index] || !dots[index]) return;
 
         slides.forEach(slide => slide.classList.remove('active'));
         slideTexts.forEach(text => text.classList.remove('active'));
         dots.forEach(dot => dot.classList.remove('active'));
 
-        if (slides[index]) slides[index].classList.add('active');
-        if (slideTexts[index]) slideTexts[index].classList.add('active');
-        if (dots[index]) dots[index].classList.add('active');
+        slides[index].classList.add('active');
+        slideTexts[index].classList.add('active');
+        dots[index].classList.add('active');
     }
+
 
     function nextSlide() {
         currentSlide = (currentSlide + 1) % totalSlides;
@@ -63,17 +61,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Auto-play carousel (only if slides exist)
-    let autoPlayInterval = null;
+    // Auto-play carousel
+    let autoPlayInterval;
     if (totalSlides > 0) {
-        showSlide(0);
         autoPlayInterval = setInterval(nextSlide, 5000);
     }
 
+
     // Pause on hover
     const carousel = document.querySelector('.hero-carousel');
-    if (carousel && autoPlayInterval) {
-        carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    if (carousel) {
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+
         carousel.addEventListener('mouseleave', () => {
             autoPlayInterval = setInterval(nextSlide, 5000);
         });
@@ -178,4 +179,31 @@ document.addEventListener("DOMContentLoaded", () => {
             showProcessSlide(currentProcessSlide);
         });
     }
+});
+
+//product category filter
+document.addEventListener('DOMContentLoaded', function () {
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const productSections = document.querySelectorAll('.product-section');
+
+    if (!categoryBtns.length || !productSections.length) return;
+
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const category = this.dataset.category;
+
+            // Update active button
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Show/hide sections
+            productSections.forEach(section => {
+                if (section.dataset.section === category) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        });
+    });
 });
